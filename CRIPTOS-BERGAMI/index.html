@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div >
+        <h1>Exchange de Criptomonedas</h1>
+    </div>
+    <form class="container">
+        <fieldset id="form">
+         
+          <div class="form-group">
+            <label for="disabledSelect">SELECCIONE LA CRIPTOMONEDA A COMPRAR</label>
+            <select id="select" class="form-control"  >
+              <option disabled selected>Selecciona una Moneda</option>
+              <option id="btc" value="Bitcoin">Bitcoin</option>
+              <option id="eth" value="Ethereum">Ethereum</option>
+              <option id="sol" value="Solana">Solana</option>
+              <option id="usdt" value="USDT">USDT</option>
+              
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="disabledTextInput">INGRESE LA CANTIDAD DE PESOS CON LA QUE VA A COMPRAR</label>
+            <input type="number" id="pesos" class="form-control" placeholder="$">
+          </div>
+          
+          <input type="button" onclick="calculadora()" value="Comprar" id="botton_comprar">
+        </fieldset>
+      </form>
+</body>
+</html>
