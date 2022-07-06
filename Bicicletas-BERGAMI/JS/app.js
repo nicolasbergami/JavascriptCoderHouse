@@ -6,8 +6,9 @@ const precioTotal = document.querySelector('#precioTotal')
 
 const btnVaciar = document.getElementById('vaciarCarrito')
 
-let carrito
-const carritoEnLS = JSON.parse( localStorage.getItem('carrito') )
+
+const carrito = JSON.parse(localStorage.getItem('carrito')) || []
+
 
 
 
@@ -18,6 +19,9 @@ stockProductos.forEach((producto) => {
     div.innerHTML = `
                     <img src=${producto.img} alt="">
                     <h3>${producto.nombre}</h3>
+                    <p>${producto.desc}</p>
+                    <p>Talle: ${producto.talle}</p>
+                    ${producto.freeshipping === true ? '<p><strong>Envío gratis</strong></p>' : ''}
                     <p class="precioProducto">Precio: $${producto.precio}</p>
                     <button onclick="agregarAlCarrito(${producto.id})" class="boton-agregar">Agregar <i class="fas fa-shopping-cart"></i></button>
                 `
@@ -27,9 +31,12 @@ stockProductos.forEach((producto) => {
 
 
 
+
 const agregarAlCarrito = (id) => {
     const item = stockProductos.find( (producto) => producto.id === id)
     carrito.push(item)
+
+    showMensaje(item.nombre)
 
     localStorage.setItem('carrito', JSON.stringify(carrito))
 
@@ -73,7 +80,7 @@ const renderCarrito = () => {
         div.innerHTML = `
                     <p>${item.nombre}</p>
                     <p>Precio: $${item.precio}</p>
-                    <button onclick="removerDelCarrito(${item.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
+                    <button  onclick="removerDelCarrito(${item.id})" class="boton-eliminar" ><i class="fas fa-trash-alt"></i></button>
                     `
         
         carritoContenedor.append(div)
@@ -93,13 +100,36 @@ const renderTotal = () => {
     precioTotal.innerText = total
 }
 
-
-if (carritoEnLS) {
-    carrito = carritoEnLS
-
-    renderCarrito()
-    renderCantidad()
-    renderTotal()
-} else {
-    carrito = []
+const showMensaje = (producto) => {
+    Toastify({
+        text: `Se agregó ${producto} al carrito!`,
+        duration: 3000,
+        gravity: 'bottom',
+        ClassName: 'toast',
+        style: {
+            
+          }
+    }).showToast()
 }
+const btnToast = document.querySelector('#vaciarCarrito')
+btnToast.addEventListener('click', () => {
+
+    Toastify({
+        text: 'El Carrito se vacio correctamente!',
+        duration: 3000,
+        gravity: 'bottom',
+        style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+          },
+    }).showToast()
+})
+
+
+
+
+
+
+renderCarrito()
+renderCantidad()
+renderTotal()
+
