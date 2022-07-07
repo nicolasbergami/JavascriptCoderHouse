@@ -19,9 +19,6 @@ stockProductos.forEach((producto) => {
     div.innerHTML = `
                     <img src=${producto.img} alt="">
                     <h3>${producto.nombre}</h3>
-                    <p>${producto.desc}</p>
-                    <p>Talle: ${producto.talle}</p>
-                    ${producto.freeshipping === true ? '<p><strong>Envío gratis</strong></p>' : ''}
                     <p class="precioProducto">Precio: $${producto.precio}</p>
                     <button onclick="agregarAlCarrito(${producto.id})" class="boton-agregar">Agregar <i class="fas fa-shopping-cart"></i></button>
                 `
