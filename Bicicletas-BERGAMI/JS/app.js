@@ -10,27 +10,32 @@ const btnVaciar = document.getElementById('vaciarCarrito')
 const carrito = JSON.parse(localStorage.getItem('carrito')) || []
 
 
+let stock = []
 
-
-stockProductos.forEach((producto) => {
-    const div = document.createElement('div')
-    div.classList.add('producto')
-
-    div.innerHTML = `
-                    <img src=${producto.img} alt="">
-                    <h3>${producto.nombre}</h3>
-                    <p class="precioProducto">Precio: $${producto.precio}</p>
-                    <button onclick="agregarAlCarrito(${producto.id})" class="boton-agregar">Agregar <i class="fas fa-shopping-cart"></i></button>
-                `
-
-    productosContainer.append(div)
-})
-
+fetch('./stock.json')
+    .then((resp) => resp.json())
+    .then((data) => {
+        stock = data
+            
+        stock.forEach((producto) => {
+            const div = document.createElement('div')
+            div.classList.add('producto')
+        
+            div.innerHTML = `
+                            <img src=${producto.img} alt="">
+                            <h3>${producto.nombre}</h3>
+                            <p class="precioProducto">Precio: $${producto.precio}</p>
+                            <button onclick="agregarAlCarrito(${producto.id})" class="boton-agregar">Agregar <i class="fas fa-shopping-cart"></i></button>
+                        `
+        
+            productosContainer.append(div)
+        })
+    })
 
 
 
 const agregarAlCarrito = (id) => {
-    const item = stockProductos.find( (producto) => producto.id === id)
+    const item = stock.find( (producto) => producto.id === id)
     carrito.push(item)
 
     showMensaje(item.nombre)
