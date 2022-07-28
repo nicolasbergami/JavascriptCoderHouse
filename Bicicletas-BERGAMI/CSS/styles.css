@@ -73,8 +73,8 @@ p {
     line-height: 1.8;
 }
 .producto {
-    max-width: 250px;
-    padding: 10px;
+    width: 18rem;
+    padding: 15px;
     margin-bottom: 20px;
     box-shadow: 2px 6px 3px 3px rgba(0, 0, 0, 0.3);
     background-color: #ebebea;
@@ -84,15 +84,17 @@ p {
     font-weight: 700;
 }
 .boton-agregar {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(249, 80, 80);
     color: white;
     font-size: 18px;
     font-weight: 700;
-    padding: 5px;
+    padding: 10px;
     border: none;
+    border-radius: 10px;
 }
 .boton-agregar:hover {
-    color: aliceblue;
+    color: whitesmoke;
+    background-color: black;
     cursor: pointer;
 }
 .boton-agregar:focus {
@@ -183,10 +185,12 @@ p {
 }
 footer {
     padding-top: 3000px;
-    background:burlywood;
+    background:#dbdbd7;
     padding: 60px 0 30px 0;
     margin: auto;
-    overflow: hidden; }
+    overflow: hidden;
+    border-top: #807f7f 4px solid;
+ }
   
   .contenedor-footer {
     display: flex;
@@ -222,4 +226,12 @@ footer {
         margin: 20px;
         border-radius: 2rem;
         opacity: .85;
+    }
+    .imagen-producto{
+width: 14rem;
+height: 10rem;
+
+
+
+
     }

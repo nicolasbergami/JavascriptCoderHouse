@@ -16,18 +16,19 @@ fetch('./stock.json')
     .then((resp) => resp.json())
     .then((data) => {
         stock = data
-            
+
         stock.forEach((producto) => {
             const div = document.createElement('div')
             div.classList.add('producto')
-        
+
             div.innerHTML = `
-                            <img src=${producto.img} alt="">
+                            
+                            <img src=${producto.img} alt="" class="imagen-producto">
                             <h3>${producto.nombre}</h3>
                             <p class="precioProducto">Precio: $${producto.precio}</p>
                             <button onclick="agregarAlCarrito(${producto.id})" class="boton-agregar">Agregar <i class="fas fa-shopping-cart"></i></button>
                         `
-        
+
             productosContainer.append(div)
         })
     })
@@ -35,7 +36,7 @@ fetch('./stock.json')
 
 
 const agregarAlCarrito = (id) => {
-    const item = stock.find( (producto) => producto.id === id)
+    const item = stock.find((producto) => producto.id === id)
     carrito.push(item)
 
     showMensaje(item.nombre)
@@ -84,7 +85,7 @@ const renderCarrito = () => {
                     <p>Precio: $${item.precio}</p>
                     <button  onclick="removerDelCarrito(${item.id})" class="boton-eliminar" ><i class="fas fa-trash-alt"></i></button>
                     `
-        
+
         carritoContenedor.append(div)
     })
 }
@@ -109,8 +110,8 @@ const showMensaje = (producto) => {
         gravity: 'bottom',
         ClassName: 'toast',
         style: {
-            
-          }
+
+        }
     }).showToast()
 }
 const btnToast = document.querySelector('#vaciarCarrito')
@@ -122,7 +123,7 @@ btnToast.addEventListener('click', () => {
         gravity: 'bottom',
         style: {
             background: "linear-gradient(to right, #00b09b, #96c93d)",
-          },
+        },
     }).showToast()
 })
 

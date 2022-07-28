@@ -1,8 +1,13 @@
 [
-    {"id": 1, "nombre": "Calcomania Logo Bicycle 2022 ", "tipo": "calcomania",  "precio": 800,  "img": "https://www.creativefabrica.com/wp-content/uploads/2020/06/23/Bicycle-bike-cycling-logo-vector-Graphics-4434283-1.jpg"},
+    {"id": 1, "nombre": "Calcomania Logo Bicycle  ", "tipo": "calcomania",  "precio": 800,  "img": "https://www.creativefabrica.com/wp-content/uploads/2020/06/23/Bicycle-bike-cycling-logo-vector-Graphics-4434283-1.jpg"},
     {"id": 2, "nombre": "Bicicleta Competitve Wheels", "tipo": "racing",  "precio": 80000,  "img": "https://www.sanferbike.com/videostv/wp-content/uploads/2020/05/Orbea-Gain-F30.jpg"},
     {"id": 3, "nombre": "Bicicleta Advance Pro 2022", "tipo": "racing",  "precio": 90000,  "img": "https://www.sanferbike.com/videostv/wp-content/uploads/2020/05/Orbea-Carpe-20.jpg"},
-    {"id": 4, "nombre": "Bicicleta Mountain Pro XRZ", "tipo": "mountain", "precio": 70000, "img": "https://www.sanferbike.com/videostv/wp-content/uploads/2020/10/Orbea-LAUFEY-H30-2021-600x400-1.jpg"}
- 
+    {"id": 4, "nombre": "Bicicleta Mountain Pro XRZ", "tipo": "mountain", "precio": 70000, "img": "https://www.sanferbike.com/videostv/wp-content/uploads/2020/10/Orbea-LAUFEY-H30-2021-600x400-1.jpg"},
+    {"id": 5, "nombre": "Bicicleta Speed Ciclyng", "tipo": "mountain", "precio": 82000, "img": "https://st.depositphotos.com/1004915/1716/i/600/depositphotos_17163261-stock-photo-bicycle.jpg"},
+    {"id": 6, "nombre": "Bicicleta Road 22", "tipo": "mountain", "precio": 75000, "img": "https://static.vecteezy.com/system/resources/previews/000/824/437/non_2x/new-bicycle-isolated-on-a-white-background-photo.jpg"},
+    {"id": 7, "nombre": "Bicicleta Vyro X", "tipo": "mountain", "precio": 92000, "img": "https://olmobikes.net/wp-content/uploads/2020/06/safari-290-mas-disc.jpg"},
+    {"id": 8, "nombre": "Bicicleta City Fast", "tipo": "mountain", "precio": 87000, "img": "https://d2r9epyceweg5n.cloudfront.net/stores/001/014/746/products/bicicleta-olmo-wish-290-freno-a-disco-21vel-aluminio-rodado-29-local-devoto-d_nq_np_682085-mla31496684734_072019-f1-7c1e1132ebd439c38615739084534254-480-0.jpg"}
+    
+
    
 ]
